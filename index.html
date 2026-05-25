@@ -4,20 +4,24 @@
   <meta charset="utf-8">
   <title>Mon jeu Flash</title>
   <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #000; width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center; overflow: hidden; }
+    ruffle-player { width: 100vw; height: 100vh; }
+  </style>
 </head>
-<body style="margin:0; background:#000; display:flex; justify-content:center;">
+<body>
   <div id="container"></div>
   <script>
     window.RufflePlayer = window.RufflePlayer || {};
     window.addEventListener("load", () => {
       const ruffle = window.RufflePlayer.newest();
       const player = ruffle.createPlayer();
-      player.style.width = "800px";
-      player.style.height = "600px";
+      player.style.width = "100vw";
+      player.style.height = "100vh";
       document.getElementById("container").appendChild(player);
-      player.load("capsule.swf"); // ← remplacez par le nom exact
+      player.load("capsule.swf");
     });
   </script>
 </body>
 </html>
- 
